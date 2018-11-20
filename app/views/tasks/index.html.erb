@@ -1,0 +1,14 @@
+<h1>Task List</h1>
+<ul>
+<% @tasks.each do |task| %>
+<li><%= link_to task.title, "tasks/#{task.id}"%>
+<%= link_to image_tag('small-trash.jpg'), task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></li>
+<% end %>
+</ul>
+
+<%= link_to "Create New Task", new_path%>
+
+<!-- < task.completed %>  -->
+<!-- #{image_tag(yourimagepath)} -->
